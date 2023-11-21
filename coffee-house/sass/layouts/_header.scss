@@ -1,0 +1,35 @@
+.header {
+    margin: 20px 0;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+}
+
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navigation {
+    display: flex;
+}
+
+.navigation-link {
+    list-style: none;
+    margin-right: 40px;
+    cursor: pointer;
+    &:last-child {
+        margin: 0;
+    }
+}
+
+.coffee-menu-link {
+    display: flex;
+    align-items: flex-start;
+}
+
+.coffee-cup {
+    padding-left: 8px;
+}
