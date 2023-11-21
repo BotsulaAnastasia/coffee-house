@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "style": "sass --watch coffee-house/sass/style.scss coffee-house/sass/style.css",
+    "style": "sass --watch sass/style.scss sass/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
