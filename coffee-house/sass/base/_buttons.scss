@@ -38,3 +38,26 @@
         opacity: 1;
     }
 }
+
+.small-button {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    @extend %transition;
+}
+
+.button-icon-dark {
+    border: 1px solid $color-background-dark;
+    &:hover {
+        background-color: $color-background-dark;
+        .arrow {
+            background-image: url(../assets/icons/arrow-hover.svg);
+        }
+    }
+}
