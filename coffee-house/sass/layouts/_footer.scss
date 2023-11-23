@@ -1,0 +1,54 @@
+.footer {
+    margin-bottom: 40px;
+}
+
+.footer-wrapper {
+    color: $color-light;
+    background: $color-background-dark;
+    border-radius: 40px;
+    padding: 100px;
+}
+
+.socials-wrapper {
+    display: flex;
+    margin-top: 40px;
+    & button:nth-child(2) {
+        margin: 0 12px;
+    }
+}
+
+.social-ico {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+}
+
+.twitter-ico {
+    background-image: url(../assets/icons/twitter.svg);
+}
+
+.inst-ico {
+    background-image: url(../assets/icons/instagram.svg);
+}
+
+.facebook-ico {
+    background-image: url(../assets/icons/facebook.svg);
+}
+
+.contacts-info-wrapper {
+    padding-left: 4px;
+    & h3 {
+        margin-bottom: 38px;
+    }
+}
+
+.contact-link {
+    display: flex;
+    color: $color-light;
+    & img {
+        margin-right: 8px;
+    }
+    &:nth-child(2) {
+        margin: 20px 0;
+    }
+}

@@ -114,6 +114,10 @@ a {
   color: #E1D4C9;
 }
 
+.button-icon-light {
+  border: 1px solid #E1D4C9;
+}
+
 .download-button-txt {
   display: flex;
   flex-direction: column;
@@ -141,6 +145,19 @@ a {
 }
 .download-button:hover .google-play-ico {
   background-image: url(../assets/icons/google-play-icon-hover.svg);
+}
+
+.social-button:hover {
+  background: #E1D4C9;
+}
+.social-button:hover .twitter-ico {
+  background-image: url(../assets/icons/twitter-hover.svg);
+}
+.social-button:hover .inst-ico {
+  background-image: url(../assets/icons/instagram-hover.svg);
+}
+.social-button:hover .facebook-ico {
+  background-image: url(../assets/icons/facebook-hover.svg);
 }
 
 .wrapper {
@@ -197,6 +214,61 @@ a {
 }
 .layout-2-columns > * {
   flex-basis: 46%;
+}
+
+.footer {
+  margin-bottom: 40px;
+}
+
+.footer-wrapper {
+  color: #E1D4C9;
+  background: #665F55;
+  border-radius: 40px;
+  padding: 100px;
+}
+
+.socials-wrapper {
+  display: flex;
+  margin-top: 40px;
+}
+.socials-wrapper button:nth-child(2) {
+  margin: 0 12px;
+}
+
+.social-ico {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+.twitter-ico {
+  background-image: url(../assets/icons/twitter.svg);
+}
+
+.inst-ico {
+  background-image: url(../assets/icons/instagram.svg);
+}
+
+.facebook-ico {
+  background-image: url(../assets/icons/facebook.svg);
+}
+
+.contacts-info-wrapper {
+  padding-left: 4px;
+}
+.contacts-info-wrapper h3 {
+  margin-bottom: 38px;
+}
+
+.contact-link {
+  display: flex;
+  color: #E1D4C9;
+}
+.contact-link img {
+  margin-right: 8px;
+}
+.contact-link:nth-child(2) {
+  margin: 20px 0;
 }
 
 .promo {

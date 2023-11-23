@@ -60,6 +60,10 @@
     }
 }
 
+.button-icon-light {
+    border: 1px solid $color-light;
+}
+
 .download-button-txt {
     display: flex;
     flex-direction: column;
@@ -85,5 +89,18 @@
         .google-play-ico {
             background-image: url(../assets/icons/google-play-icon-hover.svg);
         }
+    }
+}
+
+.social-button:hover {
+    background: $color-light;
+    .twitter-ico {
+        background-image: url(../assets/icons/twitter-hover.svg);
+    }    
+    .inst-ico {
+        background-image: url(../assets/icons/instagram-hover.svg);
+    }   
+    .facebook-ico {
+        background-image: url(../assets/icons/facebook-hover.svg);
     }
 }
