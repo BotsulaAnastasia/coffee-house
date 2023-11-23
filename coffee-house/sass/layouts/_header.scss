@@ -1,9 +1,6 @@
 .header {
+    @include font(16px, normal, 600, 150%);
     margin: 20px 0;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 150%;
 }
 
 .header-wrapper {

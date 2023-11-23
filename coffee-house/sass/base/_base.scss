@@ -5,35 +5,23 @@
 }
 
 body {
-    font-family: 'Inter', Verdana, sans-serif;
+    @extend %font-family;
     background-color: $color-light;
     color: $color-text-dark;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
+    @include font(16px, normal, 400, 150%);
 }
 
 h1 {
     color: $color-light;
-    font-size: 72px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 105%;
+    @include font(72px, normal, 600, 105%);
 }
 
 h2 {
-    font-size: 60px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 125%;
+    @include font(60px, normal, 600, 125%);
 }
 
 h3 {
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 125%;
+    @include font(24px, normal, 600, 125%);
 }
 
 .selected-text {

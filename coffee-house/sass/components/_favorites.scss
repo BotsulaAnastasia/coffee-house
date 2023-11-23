@@ -48,10 +48,7 @@
         margin: 16px 0;
     }
     & p:last-child {
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 125%;
+        @include font(24px, normal, 600, 125%);
     }
 }
 

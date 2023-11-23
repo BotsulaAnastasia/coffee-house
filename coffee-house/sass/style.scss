@@ -1,5 +1,6 @@
 @import "abstract/constants";
 @import "abstract/placeholders";
+@import "abstract/mixins";
 
 @import "base/base";
 @import "base/buttons";
@@ -7,7 +8,9 @@
 // Layouts
 @import "layouts/wrapper";
 @import "layouts/header";
+@import "layouts/columns";
 
 // Components
 @import "components/promo";
 @import "components/favorites";
+@import "components/about-us";

@@ -9,11 +9,8 @@
 }
 
 .button-text {
-    font-family: 'Inter', Verdana, sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 150%;
+    @extend %font-family;
+    @include font(16px, normal, 600, 150%);
     color: $color-text-dark;
 }
 
