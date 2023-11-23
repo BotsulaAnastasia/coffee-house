@@ -4,3 +4,21 @@
     font-weight: $weight;
     line-height: $height;
 }
+
+@mixin columns ($width) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    >* {
+        flex-basis: $width;
+    }
+}
+
+@mixin image-box ($width, $height) {
+    width: $width;
+    height: $height;
+    background-size: 110%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+}

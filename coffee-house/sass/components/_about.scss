@@ -1,0 +1,39 @@
+.about {
+    margin-bottom: 100px;
+}
+
+.big-img-wrapper {
+    @include image-box(660px, 590px);
+    @extend %transition;
+    &:hover {
+        background-size: 100%;
+    }
+}
+
+.small-img-wrapper {
+    @include image-box(660px, 430px);
+    @extend %transition;
+    &:hover {
+        background-size: 100%;
+    }
+}
+
+.column-1 {
+    .big-img-wrapper {
+        background-image: url(../assets/images/about-1.jpg);
+        margin-bottom: 40px;
+    }
+    .small-img-wrapper {
+        background-image: url(../assets/images/about-2.jpg);
+    }
+}
+
+.column-2 {
+    .small-img-wrapper {
+        background-image: url(../assets/images/about-3.jpg);
+        margin-bottom: 40px;
+    }
+    .big-img-wrapper {
+        background-image: url(../assets/images/about-4.jpg);
+    }
+}
