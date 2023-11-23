@@ -29,6 +29,12 @@
     cursor: auto;
 }
 
+.arrow-btn:hover {
+    .arrow {
+        background-image: url(../assets/icons/arrow-hover.svg);
+    }
+}
+
 .slide {
     display: flex;
     width: 1152px;

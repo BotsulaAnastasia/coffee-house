@@ -1,0 +1,25 @@
+.mobile-app {
+    margin-bottom: 100px;
+}
+
+.download-offer {
+    p {
+        margin: 40px 0;
+    }
+}
+
+.app-store-ico {
+    width: 36px;
+    height: 36px;
+    background-image: url(../assets/icons/apple-icon.svg);
+}
+
+.google-play-ico {
+    width: 36px;
+    height: 36px;
+    background-image: url(../assets/icons/google-play-icon.svg);
+}
+
+.download-buttons-wrapper {
+    display: flex;
+}

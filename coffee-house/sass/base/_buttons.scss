@@ -6,6 +6,7 @@
     border-radius: 100px;
     outline: none;
     cursor: pointer;
+    @extend %transition;
 }
 
 .button-text {
@@ -53,8 +54,36 @@
     border: 1px solid $color-background-dark;
     &:hover {
         background-color: $color-background-dark;
-        .arrow {
-            background-image: url(../assets/icons/arrow-hover.svg);
+        .button-text {
+            color: $color-light;
+        }
+    }
+}
+
+.download-button-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 8px;
+    & span:first-child {
+        @include font(10px, normal, 600, 140%);
+        margin-bottom: 2px;
+    }
+}
+
+.download-button {
+    justify-content: start;
+    background: none;
+    padding: 12px 20px;
+    &:first-child {
+        margin-right: 20px;
+    }
+    &:hover {
+        .app-store-ico {
+            background-image: url(../assets/icons/apple-icon-hover.svg);
+        }
+        .google-play-ico {
+            background-image: url(../assets/icons/google-play-icon-hover.svg);
         }
     }
 }
