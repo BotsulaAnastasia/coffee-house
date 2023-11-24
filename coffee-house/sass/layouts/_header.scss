@@ -24,6 +24,13 @@
     &:last-child {
         margin: 0;
     }
+    & a {
+        margin-bottom: 2px;
+    }
+}
+
+.coffee-menu {
+    height: 26px;
 }
 
 .coffee-menu-link {

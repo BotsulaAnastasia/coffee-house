@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     @extend %font-family;
     background-color: $color-light;
@@ -35,4 +39,23 @@ a {
     height: 100%;
     text-decoration: none;
     color: $color-text-dark;
+}
+
+
+.link {
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        background-color: $color-text-dark;
+        width: 0;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        @extend %transition;
+    }
+    &:hover::after {
+        width: 100%;
+    }
 }
