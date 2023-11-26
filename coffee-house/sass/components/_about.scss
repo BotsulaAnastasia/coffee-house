@@ -3,7 +3,7 @@
 }
 
 .big-img-wrapper {
-    @include image-box(660px, 590px);
+    @include image-box(660px, 590px, 20px);
     @extend %transition;
     &:hover {
         background-size: 100%;
@@ -11,7 +11,7 @@
 }
 
 .small-img-wrapper {
-    @include image-box(660px, 430px);
+    @include image-box(660px, 430px, 20px);
     @extend %transition;
     &:hover {
         background-size: 100%;

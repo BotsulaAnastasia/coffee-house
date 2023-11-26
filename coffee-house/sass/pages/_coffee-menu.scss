@@ -1,0 +1,164 @@
+.coffee-menu-decor {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        background-color: $color-text-dark;
+        width: 100%;
+        bottom: -2px;
+    }
+}
+
+.menu-title {
+    color: $color-text-dark;
+    @include font(60px, normal, 600, 125%);
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 40px 0;
+}
+
+.tab {
+    display: flex;
+    padding: 8px 16px 8px 8px;
+    justify-content: center;
+    align-items: center;
+    height: 46px;
+    background: none;
+    border-radius: 100px;
+    border: 1px solid $color-border-light;
+    @extend %transition;
+    cursor: pointer;
+    &:hover {
+        background: $color-background-dark;
+        border-color: $color-background-dark;
+        .tab-ico {
+            background: $color-light;
+        }
+        .tab-text {
+            color: $color-light;
+        }
+    }
+}
+
+.tab--selected {
+    background: $color-background-dark;
+    border-color: $color-background-dark;
+    cursor: auto;
+}
+
+.tab-ico {
+    display: flex;
+    padding: 3px 7px;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    background: $color-border-light;
+    margin-right: 8px;
+    padding: 3px 7px;
+    & img {
+        object-fit: contain;
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+.tab-ico--selected {
+    background: $color-light;
+}
+
+.tab-text {
+    @include font(16px, normal, 600, 150%);
+}
+
+.tab-text--selected {
+    color: $color-light;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 100px;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 310px;
+    height: 506px;
+    border-radius: 40px;
+    border: 1px solid $color-border-light;
+    cursor: pointer;
+}
+
+.product-photo {
+    flex-shrink: 0;
+    @include image-box(auto, 310px, 40px);
+    @extend %transition;
+    &:hover {
+        background-size: 100%;
+    }
+}
+
+#coffee-card-1 {
+    background-image: url(../assets/images/menu/coffee-1.jpg);
+}
+
+#coffee-card-2 {
+    background-image: url(../assets/images/menu/coffee-2.jpg);
+}
+
+#coffee-card-3 {
+    background-image: url(../assets/images/menu/coffee-3.jpg);
+}
+
+#coffee-card-4 {
+    background-image: url(../assets/images/menu/coffee-4.jpg);
+}
+
+#coffee-card-5 {
+    background-image: url(../assets/images/menu/coffee-5.jpg);
+}
+
+#coffee-card-6 {
+    background-image: url(../assets/images/menu/coffee-6.jpg);
+}
+
+#coffee-card-7 {
+    background-image: url(../assets/images/menu/coffee-7.jpg);
+}
+
+#coffee-card-8 {
+    background-image: url(../assets/images/menu/coffee-8.jpg);
+}
+
+.card-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 20px;
+}
+
+.card-title {
+    h3 {
+        margin-bottom: 12px;
+    }
+}
+
+.product-price {
+    @include font(24px, normal, 600, 125%);
+}

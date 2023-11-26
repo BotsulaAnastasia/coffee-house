@@ -13,9 +13,9 @@
     <header class="header">
         <div class="wrapper header-wrapper">
             <div class="logo-wrapper">
-                <a href="#">
+                <div>
                     <img src="./assets/icons/logo.svg" alt="logo">
-                </a>
+                </div>
             </div>
             <nav class="header-navigation">
                 <ul class="navigation">
@@ -34,98 +34,102 @@
                 </ul>
             </nav>
             <div class="coffee-menu">
-                <a class="link coffee-menu-link" href="#">
+                <a class="link coffee-menu-link" href="coffee-menu.html">
                     <span>Menu</span>
                     <img class="coffee-cup" src="./assets/icons/coffee-cup.svg" alt="coffee-cup">
                 </a>
             </div>
         </div>
     </header>
-    <section class="promo">
-        <div class="wrapper promo-wrapper">
-            <img class="promo-background" src="./assets/images/promo-img.jpg" alt="promo-img">
-            <div class="promo-content">
-                <h1><span class="selected-text">Enjoy</span> premium coffee at our charming cafe</h1>
-                <p class="promo-text">With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular destination for coffee lovers and those seeking a warm and inviting space to enjoy their favorite beverage.</p>
-                <button class="big-button coffee-menu-button">
-                    <span class="button-text">Menu</span>
-                    <img class="coffee-cup" src="./assets/icons/coffee-cup.svg" alt="coffee-cup">
-                </button>
-            </div>
-        </div>
-    </section>
-    <section class="favorite-coffee" id="favorite">
-        <div class="wrapper favorite-coffee-wrapper">
-            <h2>Choose your <span class="selected-text">favorite</span> coffee</h2>
-            <div class="slider-wrapper">
-                <div class="slider-arrow">
-                    <button class="small-button button-icon-dark arrow-btn" id="arrow-left">
-                        <span class="arrow arrow-left"></span>
-                    </button>
+    <main>
+        <section class="promo">
+            <div class="wrapper promo-wrapper">
+                <img class="promo-background" src="./assets/images/promo-img.jpg" alt="promo-img">
+                <div class="promo-content">
+                    <h1><span class="selected-text">Enjoy</span> premium coffee at our charming cafe</h1>
+                    <p class="promo-text">With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular destination for coffee lovers and those seeking a warm and inviting space to enjoy their favorite beverage.</p>
+                    <form action="coffee-menu.html">
+                        <button class="big-button coffee-menu-button">
+                            <span class="button-text">Menu</span>
+                            <img class="coffee-cup" src="./assets/icons/coffee-cup.svg" alt="coffee-cup">
+                        </button>
+                    </form>
                 </div>
-                <div class="slider-slides">
-                    <div class="slide" id="slide-1">
-                        <div class="slide-content">
-                            <img class="slider-image" src="./assets/images/coffee-slider-1.png" alt="frappuccino">
-                            <h3>S&#8217;mores Frappuccino</h3>
-                            <p>This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
-                            <p>$5.50</p>
+            </div>
+        </section>
+        <section class="favorite-coffee" id="favorite">
+            <div class="wrapper favorite-coffee-wrapper">
+                <h2>Choose your <span class="selected-text">favorite</span> coffee</h2>
+                <div class="slider-wrapper">
+                    <div class="slider-arrow">
+                        <button class="small-button button-icon-dark arrow-btn" id="arrow-left">
+                            <span class="arrow arrow-left"></span>
+                        </button>
+                    </div>
+                    <div class="slider-slides">
+                        <div class="slide" id="slide-1">
+                            <div class="slide-content">
+                                <img class="slider-image" src="./assets/images/coffee-slider-1.png" alt="frappuccino">
+                                <h3>S&#8217;mores Frappuccino</h3>
+                                <p>This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
+                                <p>$5.50</p>
+                            </div>
                         </div>
                     </div>
+                    <div class="slider-arrow">
+                        <button class="small-button button-icon-dark arrow-btn" id="arrow-right">
+                            <span class="arrow arrow-right"></span>
+                        </button>
+                    </div>
                 </div>
-                <div class="slider-arrow">
-                    <button class="small-button button-icon-dark arrow-btn" id="arrow-right">
-                        <span class="arrow arrow-right"></span>
-                    </button>
-                </div>
-            </div>
-            <div class="controls-wrapper">
-                <div class="control --active"></div>
-                <div class="control"></div>
-                <div class="control"></div>
-            </div>
-        </div>
-    </section>
-    <section class="about" id="about">
-        <div class="wrapper">
-            <h2>Resource is <span class="selected-text">the perfect and cozy place</span> where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.</h2>
-            <div class="layout-2-columns">
-                <div class="column-1">
-                    <div class="big-img-wrapper"></div>
-                    <div class="small-img-wrapper"></div>
-                </div>
-                <div class="column-2">
-                    <div class="small-img-wrapper"></div>
-                    <div class="big-img-wrapper"></div>
+                <div class="controls-wrapper">
+                    <div class="control --active"></div>
+                    <div class="control"></div>
+                    <div class="control"></div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="mobile-app" id="mobile-app">
-        <div class="wrapper layout-2-columns">
-            <div class="download-offer">
-                <h2><span class="selected-text">Download</span> our apps to start ordering</h2>
-                <p>Download the Resource app today and experience the comfort of ordering your favorite coffee from wherever you are</p>
-                <div class="download-buttons-wrapper">
-                    <button class="big-button button-icon-dark download-button">
-                        <span class="app-store-ico"></span>
-                        <div class="button-text download-button-txt">
-                            <span>Available on the</span>
-                            <span>App Store</span>
-                        </div>
-                    </button>
-                    <button class="big-button button-icon-dark download-button">
-                        <span class="google-play-ico"></span>
-                        <div class="button-text download-button-txt">
-                            <span>Available on</span>
-                            <span>Google Play</span>
-                        </div>
-                    </button>
+        </section>
+        <section class="about" id="about">
+            <div class="wrapper">
+                <h2>Resource is <span class="selected-text">the perfect and cozy place</span> where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.</h2>
+                <div class="layout-2-columns">
+                    <div class="column-1">
+                        <div class="big-img-wrapper"></div>
+                        <div class="small-img-wrapper"></div>
+                    </div>
+                    <div class="column-2">
+                        <div class="small-img-wrapper"></div>
+                        <div class="big-img-wrapper"></div>
+                    </div>
                 </div>
             </div>
-            <img src="./assets/images/mobile-screens.png" alt="mobile-screens">
-        </div>
-    </section>
+        </section>
+        <section class="mobile-app" id="mobile-app">
+            <div class="wrapper layout-2-columns">
+                <div class="download-offer">
+                    <h2><span class="selected-text">Download</span> our apps to start ordering</h2>
+                    <p>Download the Resource app today and experience the comfort of ordering your favorite coffee from wherever you are</p>
+                    <div class="download-buttons-wrapper">
+                        <button class="big-button button-icon-dark download-button">
+                            <span class="app-store-ico"></span>
+                            <div class="button-text download-button-txt">
+                                <span>Available on the</span>
+                                <span>App Store</span>
+                            </div>
+                        </button>
+                        <button class="big-button button-icon-dark download-button">
+                            <span class="google-play-ico"></span>
+                            <div class="button-text download-button-txt">
+                                <span>Available on</span>
+                                <span>Google Play</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <img src="./assets/images/mobile-screens.png" alt="mobile-screens">
+            </div>
+        </section>
+    </main>
     <footer class="footer" id="contact-us">
         <div class="wrapper footer-wrapper">
             <div class="footer-offer">
