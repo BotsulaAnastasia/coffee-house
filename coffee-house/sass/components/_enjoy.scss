@@ -1,14 +1,14 @@
-.promo {
+.enjoy {
     margin-bottom: 100px;
 }
 
-.promo-wrapper {
+.enjoy-wrapper {
     height: 644px;
     position: relative;
     padding: 100px;
 }
 
-.promo-background {
+.enjoy-background {
     position: absolute;
     z-index: -1;
     width: 100%;
@@ -19,7 +19,7 @@
     left: 0;
 }
 
-.promo-content {
+.enjoy-content {
     width: 530px;
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@
     align-items: flex-start;
 }
 
-.promo-text {
+.enjoy-text {
     color: $color-light;
     margin: 40px 0;
 }

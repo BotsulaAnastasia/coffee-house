@@ -17,6 +17,7 @@ html {
 }
 
 body {
+  min-width: 1440px;
   background-color: #E1D4C9;
   color: #403F3D;
   font-size: 16px;
@@ -320,17 +321,17 @@ a {
   background-color: #E1D4C9;
 }
 
-.promo {
+.enjoy {
   margin-bottom: 100px;
 }
 
-.promo-wrapper {
+.enjoy-wrapper {
   height: 644px;
   position: relative;
   padding: 100px;
 }
 
-.promo-background {
+.enjoy-background {
   position: absolute;
   z-index: -1;
   width: 100%;
@@ -341,7 +342,7 @@ a {
   left: 0;
 }
 
-.promo-content {
+.enjoy-content {
   width: 530px;
   display: flex;
   flex-direction: column;
@@ -349,7 +350,7 @@ a {
   align-items: flex-start;
 }
 
-.promo-text {
+.enjoy-text {
   color: #E1D4C9;
   margin: 40px 0;
 }
