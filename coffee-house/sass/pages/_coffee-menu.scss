@@ -102,15 +102,17 @@
     border-radius: 40px;
     border: 1px solid $color-border-light;
     cursor: pointer;
+    &:hover {
+        .product-photo {
+            background-size: 100%;
+        }
+    }
 }
 
 .product-photo {
     flex-shrink: 0;
     @include image-box(auto, 310px, 40px);
     @extend %transition;
-    &:hover {
-        background-size: 100%;
-    }
 }
 
 #coffee-card-1 {

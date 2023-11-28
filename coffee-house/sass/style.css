@@ -618,6 +618,9 @@ a {
   border: 1px solid #C1B6AD;
   cursor: pointer;
 }
+.card-wrapper:hover .product-photo {
+  background-size: 100%;
+}
 
 .product-photo {
   flex-shrink: 0;
@@ -627,9 +630,6 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 40px;
-}
-.product-photo:hover {
-  background-size: 100%;
 }
 
 #coffee-card-1 {
