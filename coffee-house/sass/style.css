@@ -17,7 +17,6 @@ html {
 }
 
 body {
-  min-width: 1440px;
   background-color: #E1D4C9;
   color: #403F3D;
   font-size: 16px;
@@ -182,9 +181,38 @@ a {
   background-image: url(../assets/icons/facebook-hover.svg);
 }
 
+.burger-menu {
+  width: 44px;
+  height: 44px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border-radius: 100px;
+  border: 1px solid #665F55;
+}
+@media (max-width: 768px) {
+  .burger-menu {
+    display: flex;
+  }
+}
+
+.burger-line {
+  width: 18px;
+  height: 2px;
+  background: #403F3D;
+  border-radius: 2px;
+}
+
 .wrapper {
   max-width: 1360px;
   margin: auto;
+}
+@media (max-width: 1360px) {
+  .wrapper {
+    padding: 0 40px;
+  }
 }
 
 .header {
@@ -194,11 +222,20 @@ a {
   line-height: 150%;
   margin: 20px 0;
 }
+@media (max-width: 768px) {
+  .header {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+  }
+}
 
 .header-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .logo-wrapper {
@@ -208,21 +245,30 @@ a {
 .navigation {
   display: flex;
 }
+@media (max-width: 768px) {
+  .navigation {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 100px;
+  }
+}
 
 .navigation-link {
   list-style: none;
   margin-right: 40px;
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  .navigation-link {
+    margin: 0;
+  }
+}
 .navigation-link:last-child {
   margin: 0;
 }
 .navigation-link a {
   margin-bottom: 2px;
-}
-
-.coffee-menu {
-  height: 26px;
 }
 
 .coffee-menu-link {
@@ -232,6 +278,39 @@ a {
 
 .coffee-cup {
   padding-left: 8px;
+}
+@media (max-width: 768px) {
+  .coffee-cup {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.header-navigation {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.header-navigation .point {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+@media (max-width: 768px) {
+  .header-navigation {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: #E1D4C9;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    z-index: 2;
+    padding: 60px 40px;
+  }
 }
 
 .layout-2-columns {

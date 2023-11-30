@@ -1,12 +1,16 @@
 .header {
     @include font(16px, normal, 600, 150%);
     margin: 20px 0;
+    @include media-tablet {
+        @include font(32px, normal, 600, 125%);
+    }
 }
 
 .header-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .logo-wrapper {
@@ -15,22 +19,27 @@
 
 .navigation {
     display: flex;
+    @include media-tablet {
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+        margin-bottom: 100px;
+    }
 }
 
 .navigation-link {
     list-style: none;
     margin-right: 40px;
     cursor: pointer;
+    @include media-tablet {
+        margin: 0;
+    }
     &:last-child {
         margin: 0;
     }
     & a {
         margin-bottom: 2px;
     }
-}
-
-.coffee-menu {
-    height: 26px;
 }
 
 .coffee-menu-link {
@@ -40,4 +49,33 @@
 
 .coffee-cup {
     padding-left: 8px;
+    @include media-tablet {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.header-navigation {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .point {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    @include media-tablet {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        background: $color-light;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        transform: translateY(100%);
+        z-index: 2;
+        padding: 60px 40px;
+    }
 }

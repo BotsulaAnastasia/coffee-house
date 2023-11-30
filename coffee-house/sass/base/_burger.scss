@@ -1,0 +1,21 @@
+.burger-menu {
+    width: 44px;
+    height: 44px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    border-radius: 100px;
+    border: 1px solid $color-background-dark;
+    @include media-tablet {
+        display: flex;
+    }
+}
+
+.burger-line {
+    width: 18px;
+    height: 2px;
+    background: $color-text-dark;
+    border-radius: 2px;
+}
