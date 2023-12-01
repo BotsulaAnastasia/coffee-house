@@ -10,10 +10,18 @@
     background: $color-background-dark;
     border-radius: 40px;
     padding: 100px;
+    @media screen and (max-width: 1060px) {
+        flex-direction: column;
+        align-items: start;
+        padding: 100px 60px;
+    }
 }
 
 .footer-offer {
     max-width: 45.8%;
+    @media screen and (max-width: 1060px) {
+        max-width: 100%;
+    }
 }
 
 .socials-wrapper {

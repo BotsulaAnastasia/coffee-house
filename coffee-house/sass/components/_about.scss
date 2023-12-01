@@ -8,6 +8,10 @@
     &:hover {
         background-size: 100%;
     }
+    @include media-laptop {
+        @include image-box(688px, 590px, 20px);
+        background-size: 105% 
+    }
 }
 
 .small-img-wrapper {
@@ -15,6 +19,9 @@
     @extend %transition;
     &:hover {
         background-size: 100%;
+    }
+    @include media-laptop {
+        display: none;
     }
 }
 
