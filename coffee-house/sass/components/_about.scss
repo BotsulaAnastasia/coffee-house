@@ -9,8 +9,12 @@
         background-size: 100%;
     }
     @include media-laptop {
-        @include image-box(688px, 590px, 20px);
-        background-size: 105% 
+        width: 678px;
+        background-size: 726px 726px;
+    }
+    @include media-tablet {
+        width: 100%;
+        background-size: 726px 726px;
     }
 }
 
@@ -33,6 +37,9 @@
     .small-img-wrapper {
         background-image: url(../assets/images/about-2.jpg);
     }
+    @include media-tablet {
+        width: 100%;
+    }
 }
 
 .column-2 {
@@ -42,5 +49,8 @@
     }
     .big-img-wrapper {
         background-image: url(../assets/images/about-4.jpg);
+    }
+    @include media-tablet {
+        width: 100%;
     }
 }

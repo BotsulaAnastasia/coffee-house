@@ -12,11 +12,17 @@
     margin: 40px 0;
     justify-content: space-between;
     width: 100%;
+    @include media-middle {
+        justify-content: center;
+    }
 }
 
 .slider-arrow {
     display: flex;
     align-items: center;
+    @include media-middle {
+        display: none;
+    }
 }
 
 .arrow {
@@ -31,12 +37,18 @@
 }
 
 #arrow-left {
-    margin-right: 40px;
+    margin-left: 4px;
     cursor: auto;
+    @include media-tablet {
+        margin: 0;
+    }
 }
 
 #arrow-right {
-    margin-left: 40px;
+    margin-right: 4px;
+    @include media-tablet {
+        margin: 0;
+    }
 }
 
 .arrow-btn:hover {
@@ -62,12 +74,19 @@
     & p:last-child {
         @include font(24px, normal, 600, 125%);
     }
+    @include media-middle {
+        width: 348px;
+    }
 }
 
 .slider-image {
     width: 480px;
     height: 480px;
     margin-bottom: 20px;
+    @include media-middle {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .controls-wrapper {

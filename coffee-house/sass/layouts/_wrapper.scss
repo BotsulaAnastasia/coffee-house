@@ -4,4 +4,7 @@
     @include media-laptop {
         margin: 0 40px;
     }
+    @media screen and (max-width: 500px) {
+        margin: 0 16px;
+    }
 }

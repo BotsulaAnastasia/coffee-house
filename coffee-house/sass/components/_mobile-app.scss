@@ -10,6 +10,9 @@
         flex-basis: 100%;
         margin-bottom: 100px;
     }
+    @include media-mobile {
+        margin-bottom: 40px;
+    }
 }
 
 .app-store-ico {
@@ -26,4 +29,15 @@
 
 .download-buttons-wrapper {
     display: flex;
+    @include media-middle {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.mobile-img {
+    @include media-middle {
+        width: 100%;
+        height: 100%;
+    }
 }

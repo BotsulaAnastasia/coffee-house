@@ -3,5 +3,6 @@
     margin-top: 40px;
     @include media-laptop {
         justify-content: center;
+        flex-direction: column;
     }
 }

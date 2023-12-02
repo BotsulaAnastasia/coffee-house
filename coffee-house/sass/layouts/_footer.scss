@@ -15,6 +15,10 @@
         align-items: start;
         padding: 100px 60px;
     }
+    @include media-middle {
+        padding: 60px 16px;
+        gap: 40px;
+    }
 }
 
 .footer-offer {

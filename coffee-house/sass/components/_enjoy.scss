@@ -3,11 +3,13 @@
 }
 
 .enjoy-wrapper {
-    height: 644px;
     position: relative;
     padding: 100px;
     @include media-tablet {
         padding: 100px 60px;
+    }
+    @include media-middle {
+        padding: 60px 16px;
     }
 }
 
@@ -29,9 +31,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    @include media-middle {
+        width: auto;
+    }
 }
 
 .enjoy-text {
     color: $color-light;
-    margin: 40px 0;
+    margin: 40px 0 41px;
 }

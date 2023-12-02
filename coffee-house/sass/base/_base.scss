@@ -19,10 +19,16 @@ body {
 h1 {
     color: $color-light;
     @include font(72px, normal, 600, 105%);
+    @include media-middle {
+        @include font(42px, normal, 600, 115%);
+    }
 }
 
 h2 {
     @include font(60px, normal, 600, 125%);
+    @include media-middle {
+        @include font(32px, normal, 600, 125%);
+    }
 }
 
 h3 {
