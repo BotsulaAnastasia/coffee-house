@@ -1,3 +1,7 @@
+.menu {
+    margin-bottom: 100px;
+}
+
 .coffee-menu-decor {
     display: flex;
     align-items: flex-start;
@@ -18,6 +22,9 @@
     max-width: 800px;
     margin: auto;
     text-align: center;
+    @include media-middle {
+        @include font(32px, normal, 600, 125%);
+    }
 }
 
 .tabs {
@@ -26,6 +33,9 @@
     align-items: center;
     gap: 16px;
     margin: 40px 0;
+    @include media-middle {
+        gap: 8px;
+    }
 }
 
 .tab {
@@ -91,7 +101,16 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
-    margin-bottom: 100px;
+    @include media-laptop {
+        grid-template-columns: repeat(2, 0.1fr);
+        justify-content: center;
+        #coffee-card-5, #coffee-card-6, #coffee-card-7, #coffee-card-8 {
+            display: none;
+        }
+    }
+    @include media-middle {
+        grid-template-columns: repeat(1, 0.1fr);
+    }
 }
 
 .card-wrapper {
@@ -115,35 +134,35 @@
     @extend %transition;
 }
 
-#coffee-card-1 {
+#coffee-photo-1 {
     background-image: url(../assets/images/menu/coffee-1.jpg);
 }
 
-#coffee-card-2 {
+#coffee-photo-2 {
     background-image: url(../assets/images/menu/coffee-2.jpg);
 }
 
-#coffee-card-3 {
+#coffee-photo-3 {
     background-image: url(../assets/images/menu/coffee-3.jpg);
 }
 
-#coffee-card-4 {
+#coffee-photo-4 {
     background-image: url(../assets/images/menu/coffee-4.jpg);
 }
 
-#coffee-card-5 {
+#coffee-photo-5 {
     background-image: url(../assets/images/menu/coffee-5.jpg);
 }
 
-#coffee-card-6 {
+#coffee-photo-6 {
     background-image: url(../assets/images/menu/coffee-6.jpg);
 }
 
-#coffee-card-7 {
+#coffee-photo-7 {
     background-image: url(../assets/images/menu/coffee-7.jpg);
 }
 
-#coffee-card-8 {
+#coffee-photo-8 {
     background-image: url(../assets/images/menu/coffee-8.jpg);
 }
 
@@ -163,4 +182,19 @@
 
 .product-price {
     @include font(24px, normal, 600, 125%);
+}
+
+.menu-arrow {
+    display: none;
+    justify-content: center;
+    margin-top: 40px;
+    @include media-laptop {
+        display: flex;
+    }
+}
+
+.refresh-arrow {
+    width: 24px;
+    height: 24px;
+    background-image: url(../assets/icons/refresh.svg);
 }
