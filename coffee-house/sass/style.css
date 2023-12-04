@@ -23,6 +23,7 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 h1 {
@@ -89,8 +90,10 @@ a {
   bottom: 0;
   transform: translateX(-50%);
 }
-.link:hover::after {
-  width: 100%;
+@media (hover: hover) {
+  .link:hover::after {
+    width: 100%;
+  }
 }
 
 .big-button {
@@ -117,18 +120,28 @@ a {
   border: none;
   position: relative;
 }
-.coffee-menu-button:hover span {
-  padding-right: 28px;
-}
 .coffee-menu-button img {
   opacity: 0;
   position: absolute;
   left: 108px;
 }
-.coffee-menu-button:hover img {
-  opacity: 1;
+@media (max-width: 768px) {
+  .coffee-menu-button span {
+    padding-right: 28px;
+  }
+  .coffee-menu-button img {
+    opacity: 1;
+  }
 }
 
+@media (hover: hover) {
+  .coffee-menu-button:hover span {
+    padding-right: 28px;
+  }
+  .coffee-menu-button:hover img {
+    opacity: 1;
+  }
+}
 .small-button {
   display: flex;
   width: 60px;
@@ -144,11 +157,13 @@ a {
 .button-icon-dark {
   border: 1px solid #665F55;
 }
-.button-icon-dark:hover {
-  background-color: #665F55;
-}
-.button-icon-dark:hover .button-text {
-  color: #E1D4C9;
+@media (hover: hover) {
+  .button-icon-dark:hover {
+    background-color: #665F55;
+  }
+  .button-icon-dark:hover .button-text {
+    color: #E1D4C9;
+  }
 }
 
 .button-icon-light {
@@ -178,26 +193,29 @@ a {
 .download-button:first-child {
   margin-right: 20px;
 }
-.download-button:hover .app-store-ico {
-  background-image: url(../assets/icons/apple-icon-hover.svg);
-}
-.download-button:hover .google-play-ico {
-  background-image: url(../assets/icons/google-play-icon-hover.svg);
-}
-
-.social-button:hover {
-  background: #E1D4C9;
-}
-.social-button:hover .twitter-ico {
-  background-image: url(../assets/icons/twitter-hover.svg);
-}
-.social-button:hover .inst-ico {
-  background-image: url(../assets/icons/instagram-hover.svg);
-}
-.social-button:hover .facebook-ico {
-  background-image: url(../assets/icons/facebook-hover.svg);
+@media (hover: hover) {
+  .download-button:hover .app-store-ico {
+    background-image: url(../assets/icons/apple-icon-hover.svg);
+  }
+  .download-button:hover .google-play-ico {
+    background-image: url(../assets/icons/google-play-icon-hover.svg);
+  }
 }
 
+@media (hover: hover) {
+  .social-button:hover {
+    background: #E1D4C9;
+  }
+  .social-button:hover .twitter-ico {
+    background-image: url(../assets/icons/twitter-hover.svg);
+  }
+  .social-button:hover .inst-ico {
+    background-image: url(../assets/icons/instagram-hover.svg);
+  }
+  .social-button:hover .facebook-ico {
+    background-image: url(../assets/icons/facebook-hover.svg);
+  }
+}
 .burger-menu {
   width: 44px;
   height: 44px;
@@ -300,12 +318,10 @@ a {
 
 .coffee-cup {
   padding-left: 8px;
-}
-@media (max-width: 768px) {
-  .coffee-cup {
-    width: 40px;
-    height: 40px;
-  }
+  /* @include media-tablet {
+      width: 40px;
+      height: 40px;
+  } */
 }
 
 .header-navigation {
@@ -557,10 +573,11 @@ a {
   }
 }
 
-.arrow-btn:hover .arrow {
-  background-image: url(../assets/icons/arrow-hover.svg);
+@media (hover: hover) {
+  .arrow-btn:hover .arrow {
+    background-image: url(../assets/icons/arrow-hover.svg);
+  }
 }
-
 .slide {
   display: flex;
   justify-content: center;
@@ -629,9 +646,6 @@ a {
   background-repeat: no-repeat;
   border-radius: 20px;
 }
-.big-img-wrapper:hover {
-  background-size: 100%;
-}
 @media (max-width: 1360px) {
   .big-img-wrapper {
     width: 678px;
@@ -644,6 +658,11 @@ a {
     background-size: 726px 726px;
   }
 }
+@media (hover: hover) {
+  .big-img-wrapper:hover {
+    background-size: 100%;
+  }
+}
 
 .small-img-wrapper {
   width: 660px;
@@ -653,12 +672,14 @@ a {
   background-repeat: no-repeat;
   border-radius: 20px;
 }
-.small-img-wrapper:hover {
-  background-size: 100%;
-}
 @media (max-width: 1360px) {
   .small-img-wrapper {
     display: none;
+  }
+}
+@media (hover: hover) {
+  .small-img-wrapper:hover {
+    background-size: 100%;
   }
 }
 
@@ -797,16 +818,6 @@ a {
   border: 1px solid #C1B6AD;
   cursor: pointer;
 }
-.tab:hover {
-  background: #665F55;
-  border-color: #665F55;
-}
-.tab:hover .tab-ico {
-  background: #E1D4C9;
-}
-.tab:hover .tab-text {
-  color: #E1D4C9;
-}
 
 .tab--selected {
   background: #665F55;
@@ -876,9 +887,6 @@ a {
   border-radius: 40px;
   border: 1px solid #C1B6AD;
   cursor: pointer;
-}
-.card-wrapper:hover .product-photo {
-  background-size: 100%;
 }
 
 .product-photo {
@@ -957,4 +965,20 @@ a {
   width: 24px;
   height: 24px;
   background-image: url(../assets/icons/refresh.svg);
+}
+
+@media (hover: hover) {
+  .tab:hover {
+    background: #665F55;
+    border-color: #665F55;
+  }
+  .tab:hover .tab-ico {
+    background: #E1D4C9;
+  }
+  .tab:hover .tab-text {
+    color: #E1D4C9;
+  }
+  .card-wrapper:hover .product-photo {
+    background-size: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

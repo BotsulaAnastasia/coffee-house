@@ -49,16 +49,6 @@
     border: 1px solid $color-border-light;
     @extend %transition;
     cursor: pointer;
-    &:hover {
-        background: $color-background-dark;
-        border-color: $color-background-dark;
-        .tab-ico {
-            background: $color-light;
-        }
-        .tab-text {
-            color: $color-light;
-        }
-    }
 }
 
 .tab--selected {
@@ -121,11 +111,6 @@
     border-radius: 40px;
     border: 1px solid $color-border-light;
     cursor: pointer;
-    &:hover {
-        .product-photo {
-            background-size: 100%;
-        }
-    }
 }
 
 .product-photo {
@@ -197,4 +182,22 @@
     width: 24px;
     height: 24px;
     background-image: url(../assets/icons/refresh.svg);
+}
+
+@media (hover:hover) {
+    .tab:hover {
+        background: $color-background-dark;
+        border-color: $color-background-dark;
+        .tab-ico {
+            background: $color-light;
+        }
+        .tab-text {
+            color: $color-light;
+        }
+    }
+    .card-wrapper:hover {
+        .product-photo {
+            background-size: 100%;
+        }
+    }
 }

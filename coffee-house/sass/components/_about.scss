@@ -5,9 +5,6 @@
 .big-img-wrapper {
     @include image-box(660px, 590px, 20px);
     @extend %transition;
-    &:hover {
-        background-size: 100%;
-    }
     @include media-laptop {
         width: 678px;
         background-size: 726px 726px;
@@ -16,16 +13,23 @@
         width: 100%;
         background-size: 726px 726px;
     }
+    @media (hover:hover) {
+        &:hover {
+            background-size: 100%;
+        }
+    }
 }
 
 .small-img-wrapper {
     @include image-box(660px, 430px, 20px);
     @extend %transition;
-    &:hover {
-        background-size: 100%;
-    }
     @include media-laptop {
         display: none;
+    }
+    @media (hover:hover) {
+        &:hover {
+            background-size: 100%;
+        }
     }
 }
 

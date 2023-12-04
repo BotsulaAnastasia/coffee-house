@@ -23,16 +23,27 @@
     & span {
         @extend %transition;
     }
-    &:hover span {
-        padding-right: 28px;
-    }
     & img {
         opacity: 0;
         position: absolute;
         left: 108px;
         @extend %transition;
     }
-    &:hover img {
+    @include media-tablet {
+        & span {
+            padding-right: 28px;
+        }
+        & img {
+            opacity: 1; 
+        }
+    }
+}
+
+@media (hover:hover) {
+    .coffee-menu-button:hover span {
+        padding-right: 28px;
+    }
+    .coffee-menu-button:hover img {
         opacity: 1;
     }
 }
@@ -52,10 +63,12 @@
 
 .button-icon-dark {
     border: 1px solid $color-background-dark;
-    &:hover {
-        background-color: $color-background-dark;
-        .button-text {
-            color: $color-light;
+    @media (hover:hover) {
+        &:hover {
+            background-color: $color-background-dark;
+            .button-text {
+                color: $color-light;
+            }
         }
     }
 }
@@ -83,25 +96,29 @@
     &:first-child {
         margin-right: 20px;
     }
-    &:hover {
-        .app-store-ico {
-            background-image: url(../assets/icons/apple-icon-hover.svg);
-        }
-        .google-play-ico {
-            background-image: url(../assets/icons/google-play-icon-hover.svg);
+    @media (hover:hover) {
+        &:hover {
+            .app-store-ico {
+                background-image: url(../assets/icons/apple-icon-hover.svg);
+            }
+            .google-play-ico {
+                background-image: url(../assets/icons/google-play-icon-hover.svg);
+            }
         }
     }
 }
 
-.social-button:hover {
-    background: $color-light;
-    .twitter-ico {
-        background-image: url(../assets/icons/twitter-hover.svg);
-    }    
-    .inst-ico {
-        background-image: url(../assets/icons/instagram-hover.svg);
-    }   
-    .facebook-ico {
-        background-image: url(../assets/icons/facebook-hover.svg);
+@media (hover:hover) {
+    .social-button:hover {
+        background: $color-light;
+        .twitter-ico {
+            background-image: url(../assets/icons/twitter-hover.svg);
+        }    
+        .inst-ico {
+            background-image: url(../assets/icons/instagram-hover.svg);
+        }   
+        .facebook-ico {
+            background-image: url(../assets/icons/facebook-hover.svg);
+        }
     }
 }

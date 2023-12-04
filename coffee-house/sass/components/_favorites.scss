@@ -51,9 +51,11 @@
     }
 }
 
-.arrow-btn:hover {
-    .arrow {
-        background-image: url(../assets/icons/arrow-hover.svg);
+@media (hover:hover) {
+    .arrow-btn:hover {
+        .arrow {
+            background-image: url(../assets/icons/arrow-hover.svg);
+        }
     }
 }
 

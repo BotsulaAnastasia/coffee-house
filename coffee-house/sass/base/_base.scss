@@ -14,6 +14,7 @@ body {
     background-color: $color-light;
     color: $color-text-dark;
     @include font(16px, normal, 400, 150%);
+    -webkit-tap-highlight-color: transparent;
 }
 
 h1 {
@@ -48,7 +49,6 @@ a {
     color: $color-text-dark;
 }
 
-
 .link {
     position: relative;
     &::after {
@@ -62,7 +62,9 @@ a {
         transform: translateX(-50%);
         @extend %transition;
     }
-    &:hover::after {
-        width: 100%;
+    @media (hover:hover) {
+        &:hover::after {
+            width: 100%;
+        }
     }
 }
