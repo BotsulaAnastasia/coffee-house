@@ -304,7 +304,7 @@ a {
     flex-direction: column;
     align-items: center;
     gap: 58px;
-    margin-bottom: 100px;
+    margin-bottom: 98px;
   }
 }
 
@@ -341,7 +341,7 @@ a {
 
 @media (max-width: 768px) {
   .header-cup {
-    width: 40px;
+    width: 45px;
     height: 40px;
   }
 }

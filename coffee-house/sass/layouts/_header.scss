@@ -23,7 +23,7 @@
         flex-direction: column;
         align-items: center;
         gap: 58px;
-        margin-bottom: 100px;
+        margin-bottom: 98px;
     }
 }
 
@@ -58,7 +58,7 @@
 
 .header-cup {
     @include media-tablet {
-        width: 40px;
+        width: 45px;
         height: 40px;
     }
 }
