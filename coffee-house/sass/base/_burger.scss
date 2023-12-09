@@ -1,4 +1,5 @@
 .burger-menu {
+    position: relative;
     width: 44px;
     height: 44px;
     display: none;
@@ -11,6 +12,16 @@
     @include media-tablet {
         display: flex;
     }
+    &.--active {
+        .burger-line:first-child {
+            position: absolute;
+            transform: rotate(-45deg);
+        }
+        .burger-line:last-child {
+            position: absolute;
+            transform: rotate(45deg);
+        }
+    }
 }
 
 .burger-line {
@@ -18,4 +29,5 @@
     height: 2px;
     background: $color-text-dark;
     border-radius: 2px;
+    @extend %transition;
 }

@@ -1,4 +1,4 @@
-.product-photo, .tab, .small-img-wrapper, .big-img-wrapper, .small-button, .coffee-menu-button img, .coffee-menu-button span, .big-button, .link::after {
+.product-photo, .tab, .small-img-wrapper, .big-img-wrapper, .burger-line, .small-button, .coffee-menu-button img, .coffee-menu-button span, .big-button, .link::after {
   transition: all 0.5s ease-out;
 }
 
@@ -14,6 +14,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -24,6 +25,10 @@ body {
   font-weight: 400;
   line-height: 150%;
   -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+body.--lock {
+  position: fixed;
 }
 
 h1 {
@@ -217,6 +222,7 @@ a {
   }
 }
 .burger-menu {
+  position: relative;
   width: 44px;
   height: 44px;
   display: none;
@@ -231,6 +237,14 @@ a {
   .burger-menu {
     display: flex;
   }
+}
+.burger-menu.--active .burger-line:first-child {
+  position: absolute;
+  transform: rotate(-45deg);
+}
+.burger-menu.--active .burger-line:last-child {
+  position: absolute;
+  transform: rotate(45deg);
 }
 
 .burger-line {
@@ -289,7 +303,7 @@ a {
   .navigation {
     flex-direction: column;
     align-items: center;
-    gap: 60px;
+    gap: 58px;
     margin-bottom: 100px;
   }
 }
@@ -315,13 +329,21 @@ a {
   display: flex;
   align-items: flex-start;
 }
+@media (max-width: 768px) {
+  .coffee-menu-link span {
+    padding-right: 8px;
+  }
+}
 
 .coffee-cup {
   padding-left: 8px;
-  /* @include media-tablet {
-      width: 40px;
-      height: 40px;
-  } */
+}
+
+@media (max-width: 768px) {
+  .header-cup {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .header-navigation {
@@ -336,18 +358,23 @@ a {
 }
 @media (max-width: 768px) {
   .header-navigation {
-    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     background: #E1D4C9;
     position: absolute;
     width: 100%;
+    height: 100vh;
+    right: -100%;
     bottom: 0;
-    left: 0;
     transform: translateY(100%);
     z-index: 2;
-    padding: 60px 40px;
+    padding: 80px 40px 60px;
+    transition: right 0.5s ease 0s;
+    overflow: auto;
+  }
+  .header-navigation.--active {
+    right: 0;
   }
 }
 
@@ -629,8 +656,7 @@ a {
   background: #C1B6AD;
   border-radius: 100px;
 }
-
-.--active {
+.control.--active {
   background: #665F55;
 }
 

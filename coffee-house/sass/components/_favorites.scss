@@ -102,8 +102,7 @@
     height: 4px;
     background: $color-border-light;
     border-radius: 100px;
-}
-
-.--active {
-    background: $color-background-dark;
+    &.--active {
+        background: $color-background-dark;
+    }
 }
