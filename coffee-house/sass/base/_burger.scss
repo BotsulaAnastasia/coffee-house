@@ -1,33 +1,44 @@
 .burger-menu {
-    position: relative;
     width: 44px;
     height: 44px;
     display: none;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 6px;
     border-radius: 100px;
     border: 1px solid $color-background-dark;
     @include media-tablet {
         display: flex;
     }
     &.--active {
-        .burger-line:first-child {
-            position: absolute;
-            transform: rotate(-45deg);
+        .burger-line::before {
+            top: 50%;
+            transform: rotate(-45deg) translate(0.5px, -50%);
         }
-        .burger-line:last-child {
-            position: absolute;
-            transform: rotate(45deg);
+        .burger-line::after {
+            bottom: 50%;
+            transform: rotate(45deg) translate(0.5px, 50%);
         }
     }
 }
 
 .burger-line {
-    width: 18px;
-    height: 2px;
-    background: $color-text-dark;
-    border-radius: 2px;
-    @extend %transition;
+    width: 16px;
+    height: 10px;
+    position: relative;
+    &::before {
+        top: 0;
+    }
+    &::after {
+        bottom: 0;
+    }
+    &::after, &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        background: $color-text-dark;
+        width: 100%;
+        height: 2px;
+        @extend %transition;
+    }
 }

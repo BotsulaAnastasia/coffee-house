@@ -1,4 +1,4 @@
-.product-photo, .tab, .small-img-wrapper, .big-img-wrapper, .burger-line, .small-button, .coffee-menu-button img, .coffee-menu-button span, .big-button, .link::after {
+.product-photo, .tab, .small-img-wrapper, .big-img-wrapper, .burger-line::after, .burger-line::before, .small-button, .coffee-menu-button img, .coffee-menu-button span, .big-button, .link::after {
   transition: all 0.5s ease-out;
 }
 
@@ -222,14 +222,11 @@ a {
   }
 }
 .burger-menu {
-  position: relative;
   width: 44px;
   height: 44px;
   display: none;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 6px;
   border-radius: 100px;
   border: 1px solid #665F55;
 }
@@ -238,20 +235,34 @@ a {
     display: flex;
   }
 }
-.burger-menu.--active .burger-line:first-child {
-  position: absolute;
-  transform: rotate(-45deg);
+.burger-menu.--active .burger-line::before {
+  top: 50%;
+  transform: rotate(-45deg) translate(0.5px, -50%);
 }
-.burger-menu.--active .burger-line:last-child {
-  position: absolute;
-  transform: rotate(45deg);
+.burger-menu.--active .burger-line::after {
+  bottom: 50%;
+  transform: rotate(45deg) translate(0.5px, 50%);
 }
 
 .burger-line {
-  width: 18px;
-  height: 2px;
+  width: 16px;
+  height: 10px;
+  position: relative;
+}
+.burger-line::before {
+  top: 0;
+}
+.burger-line::after {
+  bottom: 0;
+}
+.burger-line::after, .burger-line::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: 0;
   background: #403F3D;
-  border-radius: 2px;
+  width: 100%;
+  height: 2px;
 }
 
 .wrapper {
