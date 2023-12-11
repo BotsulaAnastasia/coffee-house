@@ -871,11 +871,16 @@ a {
   border: 1px solid #C1B6AD;
   cursor: pointer;
 }
-
-.tab--selected {
+.tab.--selected {
   background: #665F55;
   border-color: #665F55;
   cursor: auto;
+}
+.tab.--selected .tab-ico {
+  background: #E1D4C9;
+}
+.tab.--selected .tab-text {
+  color: #E1D4C9;
 }
 
 .tab-ico {
@@ -897,19 +902,11 @@ a {
   max-height: 100%;
 }
 
-.tab-ico--selected {
-  background: #E1D4C9;
-}
-
 .tab-text {
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
-}
-
-.tab-text--selected {
-  color: #E1D4C9;
 }
 
 .grid {
@@ -921,9 +918,6 @@ a {
   .grid {
     grid-template-columns: repeat(2, 0.1fr);
     justify-content: center;
-  }
-  .grid #coffee-card-5, .grid #coffee-card-6, .grid #coffee-card-7, .grid #coffee-card-8 {
-    display: none;
   }
 }
 @media (max-width: 720px) {
@@ -982,6 +976,54 @@ a {
 
 #coffee-photo-8 {
   background-image: url(../assets/images/menu/coffee-8.jpg);
+}
+
+#tea-photo-1 {
+  background-image: url(../assets/images/menu/tea-1.png);
+}
+
+#tea-photo-2 {
+  background-image: url(../assets/images/menu/tea-2.png);
+}
+
+#tea-photo-3 {
+  background-image: url(../assets/images/menu/tea-3.png);
+}
+
+#tea-photo-4 {
+  background-image: url(../assets/images/menu/tea-4.png);
+}
+
+#dessert-photo-1 {
+  background-image: url(../assets/images/menu/dessert-1.png);
+}
+
+#dessert-photo-2 {
+  background-image: url(../assets/images/menu/dessert-2.png);
+}
+
+#dessert-photo-3 {
+  background-image: url(../assets/images/menu/dessert-3.png);
+}
+
+#dessert-photo-4 {
+  background-image: url(../assets/images/menu/dessert-4.png);
+}
+
+#dessert-photo-5 {
+  background-image: url(../assets/images/menu/dessert-5.png);
+}
+
+#dessert-photo-6 {
+  background-image: url(../assets/images/menu/dessert-6.png);
+}
+
+#dessert-photo-7 {
+  background-image: url(../assets/images/menu/dessert-7.png);
+}
+
+#dessert-photo-8 {
+  background-image: url(../assets/images/menu/dessert-8.png);
 }
 
 .card-description {

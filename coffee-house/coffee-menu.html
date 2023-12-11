@@ -51,19 +51,19 @@
             <div class="wrapper menu-wrapper">
                 <h1 class="menu-title">Behind each of our cups hides an <span class="selected-text">amazing surprise</span></h1>
                 <div class="tabs">
-                    <button class="tab tab--selected">
-                        <span class="tab-ico tab-ico--selected">
+                    <button data-index="1" class="tab --selected">
+                        <span class="tab-ico">
                             <img src="./assets/images/menu/coffee-emoji.png" alt="coffee-cup">
                         </span>
-                        <span class="tab-text tab-text--selected">Coffee</span>
+                        <span class="tab-text">Coffee</span>
                     </button>
-                    <button class="tab">
+                    <button data-index="2" class="tab">
                         <span class="tab-ico">
                             <img src="./assets/images/menu/tea-emoji.png" alt="teapot">
                         </span>
                         <span class="tab-text">Tea</span>
                     </button>
-                    <button class="tab">
+                    <button data-index="3" class="tab">
                         <span class="tab-ico">
                             <img src="./assets/images/menu/cake-emoji.png" alt="cake">
                         </span>
@@ -71,7 +71,7 @@
                     </button>
                 </div>
                 <div class="grid">
-                    <div class="card-wrapper" id="coffee-card-1">
+                    <!-- <div class="card-wrapper" id="coffee-card-1">
                         <div class="product-photo" id="coffee-photo-1"></div>
                         <div class="card-description">
                             <div class="card-title">
@@ -150,10 +150,10 @@
                             </div>
                             <p class="product-price">$6.50</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="menu-arrow">
-                    <button class="small-button button-icon-dark">
+                    <button class="small-button button-icon-dark" id="menu-arrow">
                         <span class="refresh-arrow"></span>
                     </button>
                 </div>
@@ -196,4 +196,5 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script type="module" src="coffee-menu.js"></script>
 </body>

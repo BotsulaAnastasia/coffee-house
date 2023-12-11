@@ -49,12 +49,17 @@
     border: 1px solid $color-border-light;
     @extend %transition;
     cursor: pointer;
-}
-
-.tab--selected {
-    background: $color-background-dark;
-    border-color: $color-background-dark;
-    cursor: auto;
+    &.--selected {
+        background: $color-background-dark;
+        border-color: $color-background-dark;
+        cursor: auto;
+        .tab-ico {
+            background: $color-light;
+        }
+        .tab-text {
+            color: $color-light;
+        }
+    }
 }
 
 .tab-ico {
@@ -75,16 +80,8 @@
     }
 }
 
-.tab-ico--selected {
-    background: $color-light;
-}
-
 .tab-text {
     @include font(16px, normal, 600, 150%);
-}
-
-.tab-text--selected {
-    color: $color-light;
 }
 
 .grid {
@@ -94,9 +91,6 @@
     @include media-laptop {
         grid-template-columns: repeat(2, 0.1fr);
         justify-content: center;
-        #coffee-card-5, #coffee-card-6, #coffee-card-7, #coffee-card-8 {
-            display: none;
-        }
     }
     @include media-middle {
         grid-template-columns: repeat(1, 0.1fr);
@@ -149,6 +143,54 @@
 
 #coffee-photo-8 {
     background-image: url(../assets/images/menu/coffee-8.jpg);
+}
+
+#tea-photo-1 {
+    background-image: url(../assets/images/menu/tea-1.png);
+}
+
+#tea-photo-2 {
+    background-image: url(../assets/images/menu/tea-2.png);
+}
+
+#tea-photo-3 {
+    background-image: url(../assets/images/menu/tea-3.png);
+}
+
+#tea-photo-4 {
+    background-image: url(../assets/images/menu/tea-4.png);
+}
+
+#dessert-photo-1 {
+    background-image: url(../assets/images/menu/dessert-1.png);
+}
+
+#dessert-photo-2 {
+    background-image: url(../assets/images/menu/dessert-2.png);
+}
+
+#dessert-photo-3 {
+    background-image: url(../assets/images/menu/dessert-3.png);
+}
+
+#dessert-photo-4 {
+    background-image: url(../assets/images/menu/dessert-4.png);
+}
+
+#dessert-photo-5 {
+    background-image: url(../assets/images/menu/dessert-5.png);
+}
+
+#dessert-photo-6 {
+    background-image: url(../assets/images/menu/dessert-6.png);
+}
+
+#dessert-photo-7 {
+    background-image: url(../assets/images/menu/dessert-7.png);
+}
+
+#dessert-photo-8 {
+    background-image: url(../assets/images/menu/dessert-8.png);
 }
 
 .card-description {
