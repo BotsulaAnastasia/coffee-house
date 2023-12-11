@@ -29,7 +29,7 @@
         left: 108px;
         @extend %transition;
     }
-    @include media-tablet {
+    @media (hover:none) {
         & span {
             padding-right: 28px;
         }

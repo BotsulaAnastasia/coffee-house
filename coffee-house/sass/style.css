@@ -130,7 +130,7 @@ a {
   position: absolute;
   left: 108px;
 }
-@media (max-width: 768px) {
+@media (hover: none) {
   .coffee-menu-button span {
     padding-right: 28px;
   }
@@ -242,6 +242,11 @@ a {
 .burger-menu.--active .burger-line::after {
   bottom: 50%;
   transform: rotate(45deg) translate(0.5px, 50%);
+}
+@media (hover: hover) {
+  .burger-menu:hover {
+    cursor: pointer;
+  }
 }
 
 .burger-line {
@@ -594,31 +599,35 @@ a {
 
 #arrow-left {
   margin-left: 4px;
-  cursor: auto;
-}
-@media (max-width: 768px) {
-  #arrow-left {
-    margin: 0;
-  }
+  z-index: 2;
 }
 
 #arrow-right {
   margin-right: 4px;
+  z-index: 2;
 }
+
 @media (max-width: 768px) {
-  #arrow-right {
+  #arrow-left, #arrow-right {
     margin: 0;
   }
 }
-
 @media (hover: hover) {
   .arrow-btn:hover .arrow {
     background-image: url(../assets/icons/arrow-hover.svg);
   }
 }
-.slide {
+.slider {
+  width: 480px;
+  overflow: hidden;
+}
+
+.slider-slides {
+  width: 1440px;
   display: flex;
-  justify-content: center;
+  gap: 40px;
+  position: relative;
+  transition: all ease-out 0.6s;
 }
 
 .slide-content {
@@ -637,12 +646,12 @@ a {
   font-weight: 600;
   line-height: 125%;
 }
+
 @media (max-width: 720px) {
-  .slide-content {
+  .slider, .slide-content {
     width: 348px;
   }
 }
-
 .slider-image {
   width: 480px;
   height: 480px;
@@ -655,20 +664,27 @@ a {
   }
 }
 
-.controls-wrapper {
+.controls {
   display: flex;
   gap: 12px;
   margin-bottom: 100px;
 }
 
-.control {
+.control-wrapper {
   width: 40px;
   height: 4px;
   background: #C1B6AD;
   border-radius: 100px;
 }
-.control.--active {
+
+.control {
+  width: 0;
+  height: 100%;
   background: #665F55;
+  border-radius: 100px;
+}
+.control.--fill {
+  transition: width 3s;
 }
 
 .about {

@@ -19,6 +19,11 @@
             transform: rotate(45deg) translate(0.5px, 50%);
         }
     }
+    @media (hover:hover) {
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 
 .burger-line {
