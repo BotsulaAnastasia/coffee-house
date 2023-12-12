@@ -154,15 +154,15 @@ function getModalHTML({ id, name, description, price, category, sizes, additives
     <div class="modal-block size">
         <p>Size</p>
         <div class="modal-tabs">
-            <button class="tab --selected" data-tabindex="1" data-tabfeat="sizes">
+            <button onclick="tabFeatures(this)" class="tab tab-modal --selected" data-tabindex="1" data-tabfeat="sizes">
                 <span class="tab-ico">S</span>
                 <span class="tab-text">${sizes.s.size}</span>
             </button>
-            <button class="tab" data-tabindex="2" data-tabfeat="sizes">
+            <button onclick="tabFeatures(this)" class="tab tab-modal" data-tabindex="2" data-tabfeat="sizes">
                 <span class="tab-ico">M</span>
                 <span class="tab-text">${sizes.m.size}</span>
             </button>
-            <button class="tab" data-tabindex="3" data-tabfeat="sizes">
+            <button onclick="tabFeatures(this)" class="tab tab-modal" data-tabindex="3" data-tabfeat="sizes">
                 <span class="tab-ico">L</span>
                 <span class="tab-text">${sizes.l.size}</span>
             </button>
@@ -171,15 +171,15 @@ function getModalHTML({ id, name, description, price, category, sizes, additives
     <div class="modal-block additives">
         <p>Additives</p>
         <div class="modal-tabs">
-            <button class="tab" data-tabindex="1" data-tabfeat="additives">
+            <button onclick="tabFeatures(this)" class="tab tab-modal" data-tabindex="1" data-tabfeat="additives">
                 <span class="tab-ico">1</span>
                 <span class="tab-text">${additives[0].name}</span>
             </button>
-            <button class="tab" data-tabindex="2" data-tabfeat="additives">
+            <button onclick="tabFeatures(this)" class="tab tab-modal" data-tabindex="2" data-tabfeat="additives">
                 <span class="tab-ico">2</span>
                 <span class="tab-text">${additives[1].name}</span>
             </button>
-            <button class="tab" data-tabindex="3" data-tabfeat="additives">
+            <button onclick="tabFeatures(this)" class="tab tab-modal" data-tabindex="3" data-tabfeat="additives">
                 <span class="tab-ico">3</span>
                 <span class="tab-text">${additives[2].name}</span>
             </button>
@@ -187,7 +187,7 @@ function getModalHTML({ id, name, description, price, category, sizes, additives
     </div>
     <div class="total">
         <h3>Total:</h3>
-        <p class="product-price">$${price}</p>
+        <p class="product-price" id="total-price">$${price}</p>
     </div>
     <div class="alert">
         <img class="info-ico" src="./assets/icons/info-empty.svg" alt="info">
@@ -230,9 +230,43 @@ window.addEventListener(
   "click",
   (e) => {
     if ( isOpenModal &&
-      (e.target.id === "overlay" || e.target.id === "close-button")) {
+      (e.target.id === "overlay" || e.target.id === "close-button" || e.target.parentNode.id === "close-button")) {
       closeModal();
       return;
     }
   }, true
 );
+
+// Modal tabs
+function tabFeatures(tab) {
+  if (tab.dataset.tabfeat === "sizes") {
+    if (selectedSize == tab.dataset.tabindex) {
+      return;
+    }
+
+    document.getElementsByClassName("tab-modal")[selectedSize - 1].classList.remove("--selected");
+
+    tab.classList.add("--selected");
+
+    selectedSize = tab.dataset.tabindex;
+  } else {
+    if (selectedAdditives[tab.dataset.tabindex - 1]) {
+      tab.classList.remove("--selected");
+      selectedAdditives[tab.dataset.tabindex - 1] = false;
+    } else {
+      tab.classList.add("--selected");
+      selectedAdditives[tab.dataset.tabindex - 1] = true;
+    }
+  }
+
+  updateTotalPrice();
+}
+window.tabFeatures = tabFeatures;
+
+function updateTotalPrice() {
+  const sizeAddPrice = 0.5 * (selectedSize - 1);
+  const additiveAddPrice = 0.5 * selectedAdditives.filter((el) => el).length;
+
+  document.getElementById("total-price").innerHTML = `
+  $${(currentPrice + sizeAddPrice + additiveAddPrice).toFixed(2)}`;
+}
