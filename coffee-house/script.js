@@ -3,6 +3,7 @@ function interactionWithBurderMenu() {
     const menuIcon = document.querySelector('.burger-menu');
     const menuNav = document.querySelector('.header-navigation');
     const navLink = document.querySelectorAll('.navigation-link');
+    const menuLink = document.querySelector('.coffee-menu');
     function openBurger() {
         if (menuIcon) {
             menuIcon.addEventListener('click', function (e) {
@@ -22,6 +23,11 @@ function interactionWithBurderMenu() {
                     menuNav.classList.remove('--active');
                     menuIcon.classList.remove('--active');
                 });
+            });
+            menuLink.addEventListener('click', function (e) {
+                document.body.classList.remove('--lock');
+                menuNav.classList.remove('--active');
+                menuIcon.classList.remove('--active');
             });
         }
     }
