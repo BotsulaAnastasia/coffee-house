@@ -1,6 +1,7 @@
 import products from "./products.json" assert { type: "json" };
 console.log(products);
 
+// Cards with products at menu
 const grid = document.querySelector(".grid");
 const tabs = document.querySelectorAll(".tab");
 const menuArrow = document.getElementById("menu-arrow");
@@ -11,117 +12,227 @@ let windowWidth = window.innerWidth;
 let full;
 
 async function getProductData(url) {
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error();
-      }
-  
-      const data = await response.json();
-      productsList = [...data];
-  
-      updateMenu();
-    } catch (error) {
-      console.log(error);
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error();
     }
+  
+    const data = await response.json();
+    productsList = [...data];
+  
+    updateMenu();
+  } catch (error) {
+    console.log(error);
+  }
 }
+getProductData("./products.json");
 
 function getCardHTML({ id, name, description, price, category }) {
-    const menuItemHTML = `
-        <div class="card-wrapper" data-id="${id}" data-category="${category}">
-        <div class="product-photo" id="${category}-photo-${id}"></div>
-        <div class="card-description">
-            <div class="card-title">
-                <h3>${name}</h3>
-                <p>${description}</p>
-            </div>
-            <p class="product-price">${price}</p>
+  const menuItemHTML = `
+    <div onclick="showModalByClickOnCard(this)" class="card-wrapper" data-id="${id}" data-category="${category}">
+      <div class="product-photo" id="${category}-photo-${id}"></div>
+      <div class="card-description">
+        <div class="card-title">
+          <h3>${name}</h3>
+          <p>${description}</p>
         </div>
-        </div>
-    `;
+        <p class="product-price">${price}</p>
+      </div>
+    </div>
+  `;
   
-    return menuItemHTML;
+  return menuItemHTML;
 }
 
 function displayCards(products, activeTab, full) {
-    const cardsHTML = [];
-    const category =
-        activeTab == 1
-            ? "coffee"
-            : activeTab == 2
-            ? "tea"
-            : activeTab == 3
-            ? "dessert"
-            : "";
+  const cardsHTML = [];
+  const category =
+    activeTab == 1
+      ? "coffee"
+      : activeTab == 2
+      ? "tea"
+      : activeTab == 3
+      ? "dessert"
+      : "";
   
-    const filterProducts = products.filter(
-      (product) => product.category === category
-    );
+  const filterProducts = products.filter(
+    (product) => product.category === category
+  );
 
-    for (let filteredProduct of filterProducts) {
-      cardsHTML.push(getCardHTML(filteredProduct));
-    }
+  for (let filteredProduct of filterProducts) {
+    cardsHTML.push(getCardHTML(filteredProduct));
+  }
 
-    if (filterProducts.length > 4) {
-        menuArrow.style.display = "flex";
-    } else {
-        menuArrow.style.display = "none";
-    }
+  if (filterProducts.length > 4) {
+    menuArrow.style.display = "flex";
+  } else {
+    menuArrow.style.display = "none";
+  }
   
-    if (!full && windowWidth <= 768) {
-      return cardsHTML.slice(0, 4).join("");
-    }
+  if (!full && windowWidth <= 768) {
+    return cardsHTML.slice(0, 4).join("");
+  }
     
-    if (windowWidth > 768) {
-        menuArrow.style.display = "none";
-    }
+  if (windowWidth > 768) {
+    menuArrow.style.display = "none";
+  }
   
-    return cardsHTML.join("");
+  return cardsHTML.join("");
 }
+
+function showModalByClickOnCard(item) {
+  showModal(productsList, item.dataset.category, item.dataset.id);
+}
+window.showModalByClickOnCard = showModalByClickOnCard;
 
 function updateMenu(full = false) {
-    grid.innerHTML = displayCards(productsList, activeTab, full);
+  grid.innerHTML = displayCards(productsList, activeTab, full);
 }
-
+  
+// Tabs
 function updateSelectedTab() {
-    if (this.dataset.index === activeTab) {
-      return;
-    }
-  
-    tabs[activeTab - 1].classList.toggle("--selected");
-    activeTab = this.dataset.index;
-    tabs[activeTab - 1].classList.toggle("--selected");
-  
-    grid.style.opacity = "0";
-    setTimeout(() => {
-      updateMenu();
-      grid.style.opacity = "1";
-    }, 200);
-}
+  if (this.dataset.index === activeTab) {
+    return;
+  }
 
-function menuItemClickHandle(item) {
-    showModal(productsList, item.dataset.id);
-}
+  tabs[activeTab - 1].classList.toggle("--selected");
+  activeTab = this.dataset.index;
+  tabs[activeTab - 1].classList.toggle("--selected");
 
-function interactionWithMenuArrow() {
-    updateMenu((full = true));
-    menuArrow.style.display = "none";
-}
-
-function updateMenuByResizeWindow() {
-    windowWidth = window.innerWidth;
+  grid.style.opacity = "0";
+  setTimeout(() => {
     updateMenu();
+    grid.style.opacity = "1";
+  }, 200);
 }
-  
-// Event listeners
+
 tabs.forEach((tab) => tab.classList.remove("--selected"));
+
 for (let tab of tabs) {
     tab.addEventListener("click", updateSelectedTab, { passive: true });
 }
-menuArrow.addEventListener("click", interactionWithMenuArrow);
-window.addEventListener("resize", updateMenuByResizeWindow);
   
 tabs[activeTab - 1].classList.toggle("--selected");
-getProductData("./products.json");
 
-menuArrow.addEventListener("click", () => console.log('arrow'));
+// Update menu by refresh arrow and resize window
+function interactionWithMenuArrow() {
+  updateMenu((full = true));
+  menuArrow.style.display = "none";
+}
+
+function updateMenuByResizeWindow() {
+  windowWidth = window.innerWidth;
+  updateMenu();
+}
+
+menuArrow.addEventListener("click", interactionWithMenuArrow);
+window.addEventListener("resize", updateMenuByResizeWindow);
+
+// Modal
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+
+let currentPrice = 0;
+let selectedSize = 1;
+let selectedAdditives = [false, false, false];
+let isOpenModal = false;
+
+function getModalHTML({ id, name, description, price, category, sizes, additives }) {
+  currentPrice = parseFloat(price);
+  selectedSize = 1;
+  selectedAdditives = [false, false, false];
+  const modalHTML = `
+  <div class="preview">
+    <div class="product-photo" id="${category}-photo-${id}"></div>
+  </div>
+  <div class="modal-card-description">
+    <div class="card-title">
+        <h3>${name}</h3>
+        <p>${description}</p>
+    </div>
+    <div class="modal-block size">
+        <p>Size</p>
+        <div class="modal-tabs">
+            <button class="tab --selected" data-tabindex="1" data-tabfeat="sizes">
+                <span class="tab-ico">S</span>
+                <span class="tab-text">${sizes.s.size}</span>
+            </button>
+            <button class="tab" data-tabindex="2" data-tabfeat="sizes">
+                <span class="tab-ico">M</span>
+                <span class="tab-text">${sizes.m.size}</span>
+            </button>
+            <button class="tab" data-tabindex="3" data-tabfeat="sizes">
+                <span class="tab-ico">L</span>
+                <span class="tab-text">${sizes.l.size}</span>
+            </button>
+        </div>
+    </div>
+    <div class="modal-block additives">
+        <p>Additives</p>
+        <div class="modal-tabs">
+            <button class="tab" data-tabindex="1" data-tabfeat="additives">
+                <span class="tab-ico">1</span>
+                <span class="tab-text">${additives[0].name}</span>
+            </button>
+            <button class="tab" data-tabindex="2" data-tabfeat="additives">
+                <span class="tab-ico">2</span>
+                <span class="tab-text">${additives[1].name}</span>
+            </button>
+            <button class="tab" data-tabindex="3" data-tabfeat="additives">
+                <span class="tab-ico">3</span>
+                <span class="tab-text">${additives[2].name}</span>
+            </button>
+        </div>
+    </div>
+    <div class="total">
+        <h3>Total:</h3>
+        <p class="product-price">$${price}</p>
+    </div>
+    <div class="alert">
+        <img class="info-ico" src="./assets/icons/info-empty.svg" alt="info">
+        <p class="alert-text">The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</p>
+    </div>
+    <button class="big-button button-icon-dark close" id="close-button">
+        <span class="button-text">Close</span>
+    </button>
+  </div>
+  `;
+
+  return modalHTML;
+}
+
+function showModal(productsList, category, id) {
+  isOpenModal = true;
+  for (let productData of productsList) {
+    if (productData.category === category && productData.id === id) {
+      modal.innerHTML = getModalHTML(productData);
+    }
+  }
+
+  modal.style.display = "flex";
+  overlay.style.display = "flex";
+  setTimeout(() => {
+    modal.style.opacity = 1;
+  }, 0);
+}
+
+function closeModal() {
+  modal.style.opacity = 0;
+  setTimeout(() => {
+    overlay.style.display = "none";
+    modal.style.display = "none";
+    isOpenModal = false;
+  }, 0);
+}
+
+window.addEventListener(
+  "click",
+  (e) => {
+    if ( isOpenModal &&
+      (e.target.id === "overlay" || e.target.id === "close-button")) {
+      closeModal();
+      return;
+    }
+  }, true
+);

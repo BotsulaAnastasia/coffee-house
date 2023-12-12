@@ -70,88 +70,7 @@
                         <span class="tab-text">Dessert</span>
                     </button>
                 </div>
-                <div class="grid">
-                    <!-- <div class="card-wrapper" id="coffee-card-1">
-                        <div class="product-photo" id="coffee-photo-1"></div>
-                        <div class="card-description">
-                            <div class="card-title">
-                                <h3>Irish coffee</h3>
-                                <p>Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
-                            </div>
-                            <p class="product-price">$7.00</p>
-                        </div>
-                    </div>
-                    <div class="card-wrapper" id="coffee-card-2">
-                        <div class="product-photo" id="coffee-photo-2"></div>
-                        <div class="card-description">
-                            <div class="card-title">
-                                <h3>Kahlua coffee</h3>
-                                <p>Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
-                            </div>
-                            <p class="product-price">$7.00</p>
-                        </div>
-                    </div>
-                    <div class="card-wrapper" id="coffee-card-3">
-                        <div class="product-photo" id="coffee-photo-3"></div>
-                        <div class="card-description">
-                            <div class="card-title">
-                                <h3>Honey raf</h3>
-                                <p>Espresso with frothed milk, cream and aromatic honey</p>
-                            </div>
-                            <p class="product-price">$5.50</p>
-                        </div>
-                    </div>
-                    <div class="card-wrapper" id="coffee-card-4">
-                        <div class="product-photo" id="coffee-photo-4"></div>
-                        <div class="card-description">
-                            <div class="card-title">
-                                <h3>Ice cappuccino</h3>
-                                <p>Cappuccino with soft thick foam in summer version with ice</p>
-                            </div>
-                            <p class="product-price">$5.00</p>
-                        </div>
-                    </div>
-                    <div class="card-wrapper" id="coffee-card-5">
-                        <div class="product-photo" id="coffee-photo-5"></div>
-                        <div class="card-description">
-                            <div class="card-title">
-                                <h3>Espresso</h3>
-                                <p>Classic black coffee</p>
-                            </div>
-                            <p class="product-price">$4.50</p>
-                        </div>
-                    </div>
-                    <div class="card-wrapper" id="coffee-card-6">
-                        <div class="product-photo" id="coffee-photo-6"></div>
-                        <div class="card-description">
-                            <div class="card-title">
-                                <h3>Latte</h3>
-                                <p>Espresso coffee with the addition of steamed milk and dense milk foam</p>
-                            </div>
-                            <p class="product-price">$5.50</p>
-                        </div>
-                    </div>
-                    <div class="card-wrapper" id="coffee-card-7">
-                        <div class="product-photo" id="coffee-photo-7"></div>
-                        <div class="card-description">
-                            <div class="card-title">
-                                <h3>Latte macchiato</h3>
-                                <p>Espresso with frothed milk and chocolate</p>
-                            </div>
-                            <p class="product-price">$5.50</p>
-                        </div>
-                    </div>
-                    <div class="card-wrapper" id="coffee-card-8">
-                        <div class="product-photo" id="coffee-photo-8"></div>
-                        <div class="card-description">
-                            <div class="card-title">
-                                <h3>Coffee with cognac</h3>
-                                <p>Fragrant black coffee with cognac and whipped cream</p>
-                            </div>
-                            <p class="product-price">$6.50</p>
-                        </div>
-                    </div> -->
-                </div>
+                <div class="grid"></div>
                 <div class="menu-arrow">
                     <button class="small-button button-icon-dark" id="menu-arrow">
                         <span class="refresh-arrow"></span>
@@ -195,6 +114,64 @@
             </div>
         </div>
     </footer>
+    <div class="overlay" id="overlay">
+        <div class="modal" id="modal">
+            <!-- <div class="preview">
+                <div class="product-photo" id="${category}-photo-${id}"></div>
+            </div>
+            <div class="modal-card-description">
+                <div class="card-title">
+                    <h3>${name}</h3>
+                    <p>${description}</p>
+                </div>
+                <div class="modal-block size">
+                    <p>Size</p>
+                    <div class="modal-tabs">
+                        <button data-index="1" class="tab --selected">
+                            <span class="tab-ico">S</span>
+                            <span class="tab-text">200 ml</span>
+                        </button>
+                        <button data-index="2" class="tab">
+                            <span class="tab-ico">M</span>
+                            <span class="tab-text">300 ml</span>
+                        </button>
+                        <button data-index="3" class="tab">
+                            <span class="tab-ico">L</span>
+                            <span class="tab-text">400 ml</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-block additives">
+                    <p>Additives</p>
+                    <div class="modal-tabs">
+                        <button data-index="1" class="tab --selected">
+                            <span class="tab-ico">S</span>
+                            <span class="tab-text">200 ml</span>
+                        </button>
+                        <button data-index="2" class="tab">
+                            <span class="tab-ico">M</span>
+                            <span class="tab-text">300 ml</span>
+                        </button>
+                        <button data-index="3" class="tab">
+                            <span class="tab-ico">L</span>
+                            <span class="tab-text">400 ml</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="total">
+                    <h3>Total:</h3>
+                    <p class="product-price">${price}</p>
+                </div>
+                <div class="alert">
+                    <img class="info-ico" src="./assets/icons/info-empty.svg" alt="info">
+                    <p class="alert-text">The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</p>
+                </div>
+                <button class="big-button button-icon-dark close">
+                    <span class="button-text">Close</span>
+                </button>
+            </div> -->
+        </div>
+    </div>
     <script src="script.js"></script>
     <script type="module" src="coffee-menu.js"></script>
 </body>

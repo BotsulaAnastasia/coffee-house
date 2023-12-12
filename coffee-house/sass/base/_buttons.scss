@@ -1,3 +1,7 @@
+button {
+    @extend %font-family;
+}
+
 .big-button {
     display: flex;
     width: 200px;

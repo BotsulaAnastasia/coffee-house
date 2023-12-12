@@ -33,6 +33,7 @@
     align-items: center;
     gap: 16px;
     margin: 40px 0;
+    flex-wrap: wrap;
     @include media-middle {
         gap: 8px;
     }
@@ -73,6 +74,7 @@
     background: $color-border-light;
     margin-right: 8px;
     padding: 3px 7px;
+    @include font(16px, normal, 600, 150%);
     & img {
         object-fit: contain;
         max-width: 100%;
@@ -105,6 +107,7 @@
     border-radius: 40px;
     border: 1px solid $color-border-light;
     cursor: pointer;
+    z-index: 2;
 }
 
 .product-photo {
