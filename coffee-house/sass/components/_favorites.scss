@@ -122,6 +122,18 @@
     background: $color-background-dark;
     border-radius: 100px;
     &.--fill {
-        transition: width 3s;
+        animation: control-fill 2.5s linear forwards;
+        animation-play-state: running;
+    }
+    &.--paused {
+        animation-play-state: paused;
+    }
+}
+
+@keyframes control-fill {
+    from {
+        width: 0;
+    } to {
+        width: 100%;
     }
 }

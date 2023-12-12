@@ -771,9 +771,26 @@ a {
   border-radius: 100px;
 }
 .control.--fill {
-  transition: width 3s;
+  animation: control-fill 3s linear forwards;
+  animation-play-state: running;
+}
+.control.--unfill {
+  animation: control-fill 0.5s linear forwards;
+  animation-direction: reverse;
+  animation-play-state: running;
+}
+.control.--paused {
+  animation-play-state: paused;
 }
 
+@keyframes control-fill {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
 .about {
   margin-bottom: 100px;
 }

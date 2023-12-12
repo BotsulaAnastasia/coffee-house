@@ -78,8 +78,8 @@ function functionalityOfCarousel() {
     function autoSlider() {
         autoInterval = setInterval(() => {
             if (!isPaused) {
-                slideTo('right');
                 thisActiveControl(cardCount);
+                slideTo('right');
             }
         }, 3000);
     }
@@ -97,14 +97,12 @@ function functionalityOfCarousel() {
     }
 
     function thisActiveControl(index) {
-        control[index].style.width = '100%';
-        control[index].style.transition = 'width 3s';
+        control[index].classList.add('--fill');
     }
 
     function inactiveControl() {
-        control.forEach(item => item.style.width = '0');
         control.forEach(control => {
-            control.style.transition = 'width 0.3s';
+            control.classList.remove('--fill');
         });
     }
     
@@ -118,7 +116,7 @@ function functionalityOfCarousel() {
     
     setTimeout(() => {
         thisActiveControl(0);
-        autoSlider();
+        autoSlider(); 
     }, 500);
     
     // toggle the slider by swiping
@@ -166,6 +164,9 @@ function functionalityOfCarousel() {
             startY = touchObj.pageY;
             startTime = new Date().getTime();
             e.preventDefault();
+
+            isPaused = true;
+            control[cardCount].classList.add('--paused');
         });
     
         surface.addEventListener('touchmove', function(e) {
@@ -188,18 +189,27 @@ function functionalityOfCarousel() {
                 }
             }
             e.preventDefault();
+
+            isPaused = false;
+            control.forEach(control => {
+            control.classList.remove('--paused');
+        });
         });
     }   
     swipeDetect(allSlides);
 
-    /* // paused slider on hover
+    // paused slider on hover
     allSlides.addEventListener('mouseover', function(e) {
         isPaused = true;
+        control[cardCount].classList.add('--paused');
     });
 
     // continue
     allSlides.addEventListener('mouseout', function(e) {
         isPaused = false;
-    }); */
+        control.forEach(control => {
+            control.classList.remove('--paused');
+        });
+    });
 }
 functionalityOfCarousel();
