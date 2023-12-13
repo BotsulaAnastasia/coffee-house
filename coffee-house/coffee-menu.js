@@ -132,6 +132,7 @@ window.addEventListener("resize", updateMenuByResizeWindow);
 // Modal
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
+const HTML = document.querySelector('html');
 
 let currentPrice = 0;
 let selectedSize = 1;
@@ -215,6 +216,8 @@ function showModal(productsList, category, id) {
   setTimeout(() => {
     modal.style.opacity = 1;
   }, 0);
+
+  HTML.style.overflow = "hidden";
 }
 
 function closeModal() {
@@ -224,6 +227,8 @@ function closeModal() {
     modal.style.display = "none";
     isOpenModal = false;
   }, 0);
+
+  HTML.style.overflow = "";
 }
 
 window.addEventListener(
