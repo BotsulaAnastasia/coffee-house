@@ -42,6 +42,12 @@
     }
 }
 
+.coffee-menu {
+    @include media-tablet {
+        margin-bottom: 80px;
+    }
+}
+
 .coffee-menu-link {
     display: flex;
     align-items: flex-start;

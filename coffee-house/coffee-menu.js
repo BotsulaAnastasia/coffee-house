@@ -217,7 +217,7 @@ function showModal(productsList, category, id) {
     modal.style.opacity = 1;
   }, 0);
 
-  HTML.style.overflow = "hidden";
+  HTML.classList.toggle('--lock');
 }
 
 function closeModal() {
@@ -228,7 +228,7 @@ function closeModal() {
     isOpenModal = false;
   }, 0);
 
-  HTML.style.overflow = "";
+  HTML.classList.remove('--lock');
 }
 
 window.addEventListener(

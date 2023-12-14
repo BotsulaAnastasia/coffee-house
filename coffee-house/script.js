@@ -4,34 +4,33 @@ function interactionWithBurderMenu() {
     const menuNav = document.querySelector('.header-navigation');
     const navLink = document.querySelectorAll('.navigation-link');
     const menuLink = document.querySelector('.coffee-menu');
+    const HTML = document.querySelector('html');
+
     function openBurger() {
-        if (menuIcon) {
-            menuIcon.addEventListener('click', function (e) {
-                document.body.classList.toggle('--lock');
-                menuNav.classList.toggle('--active');
-                menuIcon.classList.toggle('--active');
-            });
-        }
+        HTML.classList.toggle('--lock');
+        menuNav.classList.toggle('--active');
+        menuIcon.classList.toggle('--active');
     }
-    openBurger();
-    
+
     function closeBurger() {
-        if (menuIcon) {
-            navLink.forEach(navLink => {
-                navLink.addEventListener('click', function (e) {
-                    document.body.classList.remove('--lock');
-                    menuNav.classList.remove('--active');
-                    menuIcon.classList.remove('--active');
-                });
-            });
-            menuLink.addEventListener('click', function (e) {
-                document.body.classList.remove('--lock');
-                menuNav.classList.remove('--active');
-                menuIcon.classList.remove('--active');
-            });
-        }
+        HTML.classList.remove('--lock');
+        menuNav.classList.remove('--active');
+        menuIcon.classList.remove('--active');
     }
-    closeBurger();
+
+    if (menuIcon) {
+        menuIcon.addEventListener('click', function (e) {
+            openBurger();    
+        });
+        navLink.forEach(navLink => {
+            navLink.addEventListener('click', function (e) {
+                closeBurger();
+            });
+        });
+        menuLink.addEventListener('click', function (e) {
+            closeBurger();
+        });
+    }
 }
 interactionWithBurderMenu();
 

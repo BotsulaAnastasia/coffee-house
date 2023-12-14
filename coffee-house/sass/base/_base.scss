@@ -7,6 +7,9 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    &.--lock {
+        overflow: hidden;
+    }
 }
 
 body {
@@ -17,9 +20,6 @@ body {
     @include font(16px, normal, 400, 150%);
     -webkit-tap-highlight-color: transparent;
     overflow-x: hidden;
-    &.--lock {
-        position: fixed;
-    }
 }
 
 h1 {
