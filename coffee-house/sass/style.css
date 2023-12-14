@@ -777,7 +777,7 @@ a {
   border-radius: 100px;
 }
 .control.--fill {
-  animation: control-fill 2.5s linear forwards;
+  animation: control-fill 3s linear forwards;
   animation-play-state: running;
 }
 .control.--paused {

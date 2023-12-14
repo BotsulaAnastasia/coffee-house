@@ -122,7 +122,7 @@
     background: $color-background-dark;
     border-radius: 100px;
     &.--fill {
-        animation: control-fill 2.5s linear forwards;
+        animation: control-fill 3s linear forwards;
         animation-play-state: running;
     }
     &.--paused {
