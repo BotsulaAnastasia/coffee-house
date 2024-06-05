@@ -1,0 +1,49 @@
+.burger-menu {
+    width: 44px;
+    height: 44px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    border: 1px solid $color-background-dark;
+    @include media-tablet {
+        display: flex;
+    }
+    &.--active {
+        .burger-line::before {
+            top: 50%;
+            transform: rotate(-45deg) translate(0.5px, -50%);
+        }
+        .burger-line::after {
+            bottom: 50%;
+            transform: rotate(45deg) translate(0.5px, 50%);
+        }
+    }
+    @media (hover:hover) {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.burger-line {
+    width: 16px;
+    height: 10px;
+    position: relative;
+    &::before {
+        top: 0;
+    }
+    &::after {
+        bottom: 0;
+    }
+    &::after, &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        background: $color-text-dark;
+        width: 100%;
+        height: 2px;
+        @extend %transition;
+    }
+}

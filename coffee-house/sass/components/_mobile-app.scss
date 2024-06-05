@@ -1,0 +1,43 @@
+.mobile-app {
+    margin-bottom: 100px;
+}
+
+.download-offer {
+    p {
+        margin: 40px 0;
+    }
+    @include media-laptop {
+        flex-basis: 100%;
+        margin-bottom: 100px;
+    }
+    @include media-mobile {
+        margin-bottom: 40px;
+    }
+}
+
+.app-store-ico {
+    width: 36px;
+    height: 36px;
+    background-image: url(../assets/icons/apple-icon.svg);
+}
+
+.google-play-ico {
+    width: 36px;
+    height: 36px;
+    background-image: url(../assets/icons/google-play-icon.svg);
+}
+
+.download-buttons-wrapper {
+    display: flex;
+    @include media-middle {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.mobile-img {
+    @include media-middle {
+        width: 100%;
+        height: 100%;
+    }
+}
