@@ -1,0 +1,139 @@
+.favorite-coffee-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+        text-align: center;
+    }
+}
+
+.slider-wrapper {
+    display: flex;
+    margin: 40px 0;
+    justify-content: space-between;
+    width: 100%;
+    @include media-middle {
+        justify-content: center;
+    }
+}
+
+.slider-arrow {
+    display: flex;
+    align-items: center;
+    @include media-middle {
+        display: none;
+    }
+}
+
+.arrow {
+    background: url(../assets/icons/arrow.svg);
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+}
+
+.arrow-right {
+    transform: rotate(180deg);
+}
+
+#arrow-left {
+    margin-left: 4px;
+    z-index: 2;
+}
+
+#arrow-right {
+    margin-right: 4px;
+    z-index: 2;
+}
+
+@include media-tablet {
+    #arrow-left, #arrow-right {
+        margin: 0;
+    }
+}
+
+@media (hover:hover) {
+    .arrow-btn:hover {
+        .arrow {
+            background-image: url(../assets/icons/arrow-hover.svg);
+        }
+    }
+}
+
+.slider {
+    width: 480px;
+    overflow: hidden;
+}
+
+.slider-slides {
+    width: 1440px;
+    display: flex;
+    gap: 40px;
+    position: relative;
+    transition: all ease-out 0.6s;
+}
+
+.slide-content {
+    display: flex;
+    width: 480px;
+    flex-direction: column;
+    align-items: center;
+    & p:nth-last-child(2) {
+        text-align: center;
+        margin: 16px 0;
+    }
+    & p:last-child {
+        @include font(24px, normal, 600, 125%);
+    }
+}
+
+@include media-middle {
+    .slider, .slide-content {
+        width: 348px;
+    }
+}
+
+.slider-image {
+    width: 480px;
+    height: 480px;
+    margin-bottom: 20px;
+    @include media-middle {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.controls {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 100px;
+}
+
+.control-wrapper {
+    width: 40px;
+    height: 4px;
+    background: $color-border-light;
+    border-radius: 100px;
+}
+
+.control {
+    width: 0;
+    height: 100%;
+    background: $color-background-dark;
+    border-radius: 100px;
+    &.--fill {
+        animation: control-fill 3s linear forwards;
+        animation-play-state: running;
+    }
+    &.--paused {
+        animation-play-state: paused;
+    }
+}
+
+@keyframes control-fill {
+    from {
+        width: 0;
+    } to {
+        width: 100%;
+    }
+}
