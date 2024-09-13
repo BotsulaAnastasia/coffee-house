@@ -1,6 +1,3 @@
-import products from "./products.json" assert { type: "json" };
-console.log(products);
-
 // Cards with products at menu
 const grid = document.querySelector(".grid");
 const tabs = document.querySelectorAll(".tab");
@@ -17,10 +14,10 @@ async function getProductData(url) {
     if (!response.ok) {
       throw new Error();
     }
-  
+
     const data = await response.json();
     productsList = [...data];
-  
+
     updateMenu();
   } catch (error) {
     console.log(error);
@@ -41,7 +38,7 @@ function getCardHTML({ id, name, description, price, category }) {
       </div>
     </div>
   `;
-  
+
   return menuItemHTML;
 }
 
@@ -55,7 +52,7 @@ function displayCards(products, activeTab, full) {
       : activeTab == 3
       ? "dessert"
       : "";
-  
+
   const filterProducts = products.filter(
     (product) => product.category === category
   );
@@ -69,15 +66,15 @@ function displayCards(products, activeTab, full) {
   } else {
     menuArrow.style.display = "none";
   }
-  
+
   if (!full && windowWidth <= 768) {
     return cardsHTML.slice(0, 4).join("");
   }
-    
+
   if (windowWidth > 768) {
     menuArrow.style.display = "none";
   }
-  
+
   return cardsHTML.join("");
 }
 
@@ -89,7 +86,7 @@ window.showModalByClickOnCard = showModalByClickOnCard;
 function updateMenu(full = false) {
   grid.innerHTML = displayCards(productsList, activeTab, full);
 }
-  
+
 // Tabs
 function updateSelectedTab() {
   if (this.dataset.index === activeTab) {
@@ -110,9 +107,9 @@ function updateSelectedTab() {
 tabs.forEach((tab) => tab.classList.remove("--selected"));
 
 for (let tab of tabs) {
-    tab.addEventListener("click", updateSelectedTab, { passive: true });
+  tab.addEventListener("click", updateSelectedTab, { passive: true });
 }
-  
+
 tabs[activeTab - 1].classList.toggle("--selected");
 
 // Update menu by refresh arrow and resize window
@@ -130,16 +127,24 @@ menuArrow.addEventListener("click", interactionWithMenuArrow);
 window.addEventListener("resize", updateMenuByResizeWindow);
 
 // Modal
-const modal = document.querySelector('.modal');
-const overlay = document.querySelector('.overlay');
-const HTML = document.querySelector('html');
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const HTML = document.querySelector("html");
 
 let currentPrice = 0;
 let selectedSize = 1;
 let selectedAdditives = [false, false, false];
 let isOpenModal = false;
 
-function getModalHTML({ id, name, description, price, category, sizes, additives }) {
+function getModalHTML({
+  id,
+  name,
+  description,
+  price,
+  category,
+  sizes,
+  additives,
+}) {
   currentPrice = parseFloat(price);
   selectedSize = 1;
   selectedAdditives = [false, false, false];
@@ -217,7 +222,7 @@ function showModal(productsList, category, id) {
     modal.style.opacity = 1;
   }, 0);
 
-  HTML.classList.toggle('--lock');
+  HTML.classList.toggle("--lock");
 }
 
 function closeModal() {
@@ -228,18 +233,23 @@ function closeModal() {
     isOpenModal = false;
   }, 0);
 
-  HTML.classList.remove('--lock');
+  HTML.classList.remove("--lock");
 }
 
 window.addEventListener(
   "click",
   (e) => {
-    if ( isOpenModal &&
-      (e.target.id === "overlay" || e.target.id === "close-button" || e.target.parentNode.id === "close-button")) {
+    if (
+      isOpenModal &&
+      (e.target.id === "overlay" ||
+        e.target.id === "close-button" ||
+        e.target.parentNode.id === "close-button")
+    ) {
       closeModal();
       return;
     }
-  }, true
+  },
+  true
 );
 
 // Modal tabs
@@ -249,7 +259,9 @@ function tabFeatures(tab) {
       return;
     }
 
-    document.getElementsByClassName("tab-modal")[selectedSize - 1].classList.remove("--selected");
+    document
+      .getElementsByClassName("tab-modal")
+      [selectedSize - 1].classList.remove("--selected");
 
     tab.classList.add("--selected");
 
